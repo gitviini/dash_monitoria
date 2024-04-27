@@ -39,7 +39,7 @@ if generate_list():
         c10, c11 = container.columns(2,gap='large')
         aluno = dt_filter_aluno.filter(items=['Total Marks','Rank','AVALIAÇÃO DIAGNÓSTICA -Língua Portuguesa ']).melt(var_name='ASSUNTO',value_name='VALOR')
         aluno['ASSUNTO'][2] = 'Nº Port / Math'
-        aluno['VALOR'][2] = f'{aluno['VALOR'][2]} / {aluno['VALOR'].get(0) - aluno['VALOR'].get(2)}'
+        aluno['VALOR'][2] = f'{aluno["VALOR"][2]} / {aluno["VALOR"].get(0) - aluno["VALOR"].get(2)}'
         pontos = dt_filter_aluno.melt(var_name='ASSUNTO',value_name='VALOR').drop(range(6))
         cor_inc = dt_filter_aluno.filter(items=['Correct Answers','Incorrect Answers'])
 
